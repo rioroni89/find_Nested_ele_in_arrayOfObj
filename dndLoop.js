@@ -8,12 +8,12 @@ function getObject(tempRwData, drgArr) {
                 drgArr.shift();
                 result = getObject(n, drgArr);
             } else {
-                tempRwData.children[i].children = [{"hello":"hi"}];
-                console.log(tempRwData.children[i]);
-                console.log(tempRwData.children[i].title);
-                console.log(tempRwData.children[i].id);
+                tempRwData.children[drgArr[i]].children = [{"hello":"hi"}];
+                console.log(tempRwData.children[drgArr[i]]);
+                console.log(tempRwData.children[drgArr[i]].title);
+                console.log(tempRwData.children[drgArr[i]].id);
                 console.log(tempRowData);
-                result = tempRwData.children[i];
+                result = tempRwData.children[drgArr[i]];
             }
         
         }
@@ -88,11 +88,11 @@ $(function() {
                                 'id':'id_1_1_0',
                          }]
                 }]
-      }
+            }
       ]
   };
   
-  var drgArr = [1,1,0];
+  var drgArr = [0,1,0,0,0];
   var result = getObject(tempRowData, drgArr);
 
     if(result != null) {
